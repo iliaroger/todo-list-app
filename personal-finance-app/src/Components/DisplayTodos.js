@@ -5,9 +5,10 @@ function Display(props){
 
     return(
         <div>
-            <h1>Todo list</h1>
-            <br></br>
-            <ul></ul>
+            <h1>Todo list:</h1>
+            <div className="todoBox">
+                <ul></ul>
+            </div>
         </div>
     )
 }
