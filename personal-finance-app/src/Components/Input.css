@@ -20,3 +20,58 @@ input::placeholder{
     color: rgb(170, 170, 170);
     font-style: italic;
 }
+
+input[type = "text"]{
+    font-size: 30px;
+}
+
+#addButton{
+    background-color: #30D158;
+    border: none;
+    padding: 15px 120px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 3%;
+    width: 50%;
+    transition: 0.3s;
+}
+
+#addButton:hover{
+    background-color: rgb(44, 175, 77);
+    transition: 0.3s;
+}
+
+#markButton{
+    background-color: #FF9F0A;
+    border: none;
+    padding: 15px 120px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 2%;
+    width: 50%;
+    transition: 0.3s;
+}
+
+#markButton:hover{
+    background-color: rgb(233, 144, 12);
+    transition: 0.3s;
+}
+
+#removeButton{
+    background-color: #FF453A;
+    border: none;
+    padding: 15px 120px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 2%;
+    width: 50%;
+    transition: 0.3s;
+}
+
+#removeButton:hover{
+    background-color: rgb(226, 64, 55);
+    transition: 0.3s;
+}
