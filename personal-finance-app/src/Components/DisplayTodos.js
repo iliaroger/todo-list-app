@@ -7,20 +7,30 @@ function Display(props){
     const {todos, setTodos} = useContext(ContextData);
 
 
-    const itemChecked = useCallback((value)=>{
-        console.log("checkbox checked", value);
-    },[])
+    const itemChecked = (todo,index) => (event) => {
+        
+        const newArray = [...todos];
+
+        newArray.splice(index, 1, {
+            ...todo,
+            checked: !todo.checked
+        })
+
+        setTodos(newArray);
+
+    }
 
     return(
         <div>
             <h1>Todo list:</h1>
             <div className="todoBox">
                 <ul>
-                    {todos.map(todo =>{
+                    {todos.map((todo, index) =>{
                         return (
                         <div key={todo.id} className = "custom-control custom-checkbox" >
-                            <input type="checkbox" className="custom-control-input" id="customCheck1" checked={todo.checked} onChange={itemChecked}/>
-                            <label className="custom-control-label" htmlFor="customCheck1">{todo.content}</label>
+                            <input type="checkbox" className='custom-control-input' 
+                            id={todo.id} checked={todo.checked} onChange={itemChecked(todo, index)}/>
+                            <label className={todo.checked ? 'custom-control-label todoDone ' : 'custom-control-label todoNotDone'} htmlFor={todo.id}>{todo.content}</label>
                         </div>
                         )
                     })}
