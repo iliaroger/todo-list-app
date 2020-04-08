@@ -6,7 +6,7 @@ import {ContextData} from './Components/Context';
 
 function App() {
 
-  const [todos, setTodo] = useState();
+  const [todos, setTodo] = useState([]);
 
   return (
     <div className="container">
