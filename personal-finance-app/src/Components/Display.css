@@ -15,6 +15,7 @@ h1{
     margin: 0 auto;
     overflow: hidden;
     overflow-y: scroll;
+    user-select: none;
 }
 
 .todoDone {
