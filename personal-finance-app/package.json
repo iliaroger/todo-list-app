@@ -10,7 +10,6 @@
     "concurrently": "^5.1.0",
     "cross-env": "^7.0.2",
     "electron": "^8.2.1",
-    "electron-builder": "^22.4.1",
     "electron-is-dev": "^1.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -22,7 +21,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"cross-env BROWSER=none npm run start\" \"wait-on http://localhost:3000 && electron .\""
+    "electron-dev": "concurrently \" cross-env BROWSER=none npm run start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build-app": "electron-packager ./ Todo",
+    "electron-pack": "build --em.main=build/main.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,5 +40,20 @@
       "last 1 safari version"
     ]
   },
-  "main": "public/main.js"
+  "main": "public/main.js",
+  "devDependencies": {
+    "electron-builder": "^22.4.1",
+    "electron-packager": "^14.2.1"
+  },
+  "build": {
+    "appId": "com.todo.app",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "homepage": "./"
 }
